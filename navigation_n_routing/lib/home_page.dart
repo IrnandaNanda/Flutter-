@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget{
       body: Center(
         child: ElevatedButton(onPressed: () {
           Navigator.push(context, MaterialPageRoute(
-            builder: (context) => DetailPage()
+            builder: (context) => DetailPage(keterangan: 'Belajar Dengan Agus')
           ));
         }, child: Text('Detail Page'))
       ),

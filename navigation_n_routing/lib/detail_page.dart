@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget{
-  const DetailPage({ super.key });
+  final String keterangan;
+  const DetailPage({ Key? key, required this.keterangan }): super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Detail Page')),
+      appBar: AppBar(title: Text(keterangan)),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('Hello Agus'),
+          child: Text('Hello $keterangan'),
         ),
       ),
     );
