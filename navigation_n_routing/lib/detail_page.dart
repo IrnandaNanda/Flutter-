@@ -13,7 +13,7 @@ class DetailPage extends StatelessWidget{
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('Hello $keterangan'),
+          child: Text('$keterangan'),
         ),
       ),
     );

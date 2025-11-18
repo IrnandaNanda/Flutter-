@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget{
           Navigator.push(context, MaterialPageRoute(
             builder: (context) => DetailPage(keterangan: 'Belajar Dengan Agus')
           ));
-        }, child: Text('Detail Page'))
+        }, child: Text('Mau Belajar'))
       ),
     );
   }
