@@ -17,18 +17,18 @@ class _MyHomePageState extends State<MyhomePage> {
       ),
       body: GridView(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 10.0,
+          crossAxisCount: 2, // Jumlah kolom
+          crossAxisSpacing: 10.0,  // Jarak antar kolom
+          mainAxisSpacing: 10.0, // Jarak antar baris
         ),
-        children: List.generate(20, (index) {
+        children: List.generate(40,  (index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               color: Colors.green.shade500,
               child: Center(
                 child: Text(
-                  'Item $index',
+                  'Aku Agus Ke- g$index',
                   style: TextStyle(color: Colors.white, fontSize: 20)
                 ),
               ),
