@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mylogin/home_page.dart';
 
 
 class LoginScreen extends StatelessWidget{
@@ -22,7 +23,7 @@ class LoginScreen extends StatelessWidget{
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(50.0)            
                 ),
-                child: Image.asset('assets/stikma_logo.png'),
+                child: Image.asset('assets/images/stikma.png'),
               ),
             ),),
             Padding(padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0, bottom: 0),
@@ -68,9 +69,11 @@ class LoginScreen extends StatelessWidget{
                       ),
                     ),
                   );
+                  Route route = MaterialPageRoute(builder: (context) => HomePage());
+                  Navigator.push(context, route);
                 },
                 child: Text(
-                  'Login',
+                  'sign in',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
