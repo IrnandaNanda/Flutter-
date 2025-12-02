@@ -18,12 +18,12 @@ class _ToDoListPageState extends State<ToDoListPage> {
     fetchTodo();
   }
 
+  @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: AppBar(title: const Text("Todo List")),
+      appBar: AppBar(title: Text("Todo List")),
       body: Visibility(
         visible: isLoading,
-        child: Center(child: CircularProgressIndicator()),
         replacement: RefreshIndicator(
           onRefresh: fetchTodo,
           child: Visibility(
@@ -51,8 +51,9 @@ class _ToDoListPageState extends State<ToDoListPage> {
         ),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: navigateToAddPage,
-          label: const Text("Add ToDo"),
+          label: Text("Add ToDo"),
         ),
+        child: Center(child: CircularProgressIndicator()),
       ),
     );
   }

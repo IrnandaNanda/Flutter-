@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget{
   final String keterangan;
-  const DetailPage({ Key? key, required this.keterangan }): super(key: key);
+  const DetailPage({ super.key, required this.keterangan });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class DetailPage extends StatelessWidget{
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('$keterangan'),
+          child: Text(keterangan),
         ),
       ),
     );
