@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mylogin/home_page.dart';
+import 'package:mylogin/register.dart';
 
 
 class LoginScreen extends StatelessWidget{
@@ -78,6 +79,22 @@ class LoginScreen extends StatelessWidget{
                 ),
               ),
             ),
+            ElevatedButton (
+              onPressed: () {
+                Route route = MaterialPageRoute(builder: (context) => RegisterPage());
+                Navigator.push(context, route);
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue.shade600,
+                foregroundColor: Colors.white,
+                shadowColor: Colors.blue.shade900,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+              ),
+              child: const Text(
+                'sign up',
+                style: TextStyle(fontSize: 18),
+              ),
+            )
           ],
         ),
     );
