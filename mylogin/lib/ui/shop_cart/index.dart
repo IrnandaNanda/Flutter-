@@ -48,7 +48,7 @@ class ShopCartPage extends StatelessWidget {
       Product(id: '1', name: 'Sepatu Amble', price: 100000,
       image: 'assets/images/product/sepatu_amble.jpg'),
       Product(id: '2', name: 'Sepatu Ardiles', price: 200000,
-      image: 'assets/images/product/sepatu_ardiles.jpeg'),
+      image: 'assets/images/product/sepatu_ardiles.jpg'),
       Product(id: '3', name: 'Sepatu Brodo', price: 250000,
       image: 'assets/images/product/sepatu_brodo.jpg'),
       Product(id: '4', name: 'Sepatu Buccheri', price: 230000,
@@ -77,29 +77,82 @@ class ShopCartPage extends StatelessWidget {
         title: const Text('Shop Cart'),
       ),
       body: ListView.builder(
+        padding: const EdgeInsets.all(10),
         itemCount: items.length,
         itemBuilder: (BuildContext context, int index) {
           return Card(
-            child: ListTile(
-              title: Text(items[index].name),
-              leading: Image.asset(
-                items[index].image,
-                width: 50,
-                height: 50,
-                fit: BoxFit.cover,
-              ),
-            subtitle: Text(
-              'Rp ${items[index].price}',
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            ),
-            trailing: IconButton(
-              icon: const Icon(Icons.delete),
-              onPressed: () {},
-            ),
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text(items[index].name),
+                  leading: Image.asset(
+                    items[index].image,
+                    width: 50,
+                    height: 50,
+                    fit: BoxFit.cover,
+                  ),
+                subtitle: Text(
+                  'Rp ${items[index].price}',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                trailing: IconButton(
+                  icon: const Icon(Icons.delete),
+                  onPressed: () {},
+                ),
+                const ShopCartItemQty()
+
+                ),
+              ],
             ),
           );
         },
       ),
+    );
+  }
+}
+
+class ShopCartItemQty extends StatefulWidget {
+  const ShopCartItemQty({super.key});
+
+  @override
+  State<ShopCartItemQty> createState() => _ShopCartItemQtyState();
+}
+
+class _ShopCartItemQtyState extends State<ShopCartItemQty> {
+  int _jml = 1;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        IconButton(
+          icon: const Icon(Icons.delete),
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: const Icon(Icons.remove),
+          onPressed: () {
+            setState(() {
+              if (_jml > 1) {
+                _jml--;
+              }
+            });
+          },
+        ),
+        Text(
+          _jml.toString(),
+          style: const TextStyle(fontSize: 16),
+        ),
+        IconButton(
+          icon: const Icon(Icons.add),
+          onPressed: () {
+            setState(() {
+              _jml++;
+            });
+          },
+        ),
+      ],
     );
   }
 }
