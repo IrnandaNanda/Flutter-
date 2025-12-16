@@ -83,6 +83,7 @@ class ShopCartPage extends StatelessWidget {
           return Card(
             child: Column(
               children: [
+                const ShopCartItemQty(),
                 ListTile(
                   title: Text(items[index].name),
                   leading: Image.asset(
@@ -99,8 +100,6 @@ class ShopCartPage extends StatelessWidget {
                   icon: const Icon(Icons.delete),
                   onPressed: () {},
                 ),
-                const ShopCartItemQty()
-
                 ),
               ],
             ),
@@ -126,12 +125,12 @@ class _ShopCartItemQtyState extends State<ShopCartItemQty> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        // IconButton(
+        //   icon: const Icon(Icons.delete),
+        //   onPressed: () {},
+        // ),
         IconButton(
-          icon: const Icon(Icons.delete),
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: const Icon(Icons.remove),
+          icon: const Icon(Icons.remove_circle),
           onPressed: () {
             setState(() {
               if (_jml > 1) {
