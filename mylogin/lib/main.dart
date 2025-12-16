@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mylogin/login_screen.dart';
+// import 'package:mylogin/login_screen.dart';
+import 'package:mylogin/ui/shop_cart/index.dart';
+
 void main() {
   runApp(const MainApp());
 }
@@ -10,12 +12,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Demo (Irnanda)',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: const ShopCartPage(),
     );
   }
 }
