@@ -46,6 +46,19 @@ class _RegisterPageState extends State<RegisterPage> {
               padding: const EdgeInsets.fromLTRB(18.0, 8.0, 18.0, 8.0),
               child: TextFormField(
                 decoration: InputDecoration(
+                  labelText: 'Username',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                  suffixIcon: const Icon(
+                    Icons.person,
+                    ), 
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(18.0, 8.0, 18.0, 8.0),
+              child: TextFormField(
+                decoration: InputDecoration(
                   labelText: 'Password',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(30)),
